@@ -6,7 +6,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "apps/*"
+      "apps/service_a",
+      "apps/service_b"
     ],
     "nohoist": [
       "**/service_a/**",
@@ -15,16 +16,11 @@
       "**/service_b"
     ]
   },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "cloudinary": "^1.33.0"
-  },
   "scripts": {
-    "install:a": "yarn --cwd service_a install",
-    "install:b": "yarn --cwd service_b install",
-    "build:a": "yarn --cwd service_a build",    
-    "build:b": "yarn --cwd service_b build"  
-  }
+    "build:a": "yarn --cwd service_a build",
+    "clean:a": "yarn -cwd service_a clean",
+    "build:b": "yarn --cwd service_b build",
+    "clean:b": "yarn -cwd service_b clean"
+  },
+  "packageManager": "yarn@3.3.1"
 }
