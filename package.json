@@ -1,0 +1,30 @@
+{
+  "name": "yarn_focused",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ],
+    "nohoist": [
+      "**/service_a/**",
+      "**/service_a",
+      "**/service_b/**",
+      "**/service_b"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "cloudinary": "^1.33.0"
+  },
+  "scripts": {
+    "install:a": "yarn --cwd service_a install",
+    "install:b": "yarn --cwd service_b install",
+    "build:a": "yarn --cwd service_a build",    
+    "build:b": "yarn --cwd service_b build"  
+  }
+}
